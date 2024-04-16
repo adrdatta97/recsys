@@ -1,6 +1,6 @@
 Recommendation Systems (Collaborative Filtering)
 
-In this work,I've trained and tested two recommendation system algorithms : user- based and item-based CF models on two different datasets(MovieLens, Book) to explore the performance in recommending users relevant content.
+In this work , I've trained and tested two recommendation system algorithms : user- based and item-based CF models on two different datasets(MovieLens, Book) to explore the performance in recommending users relevant content.
 The entire dataset was first downloaded from Kaggle and loaded into a pandas dataframe, where only the subset of a dataset was selected for training and testing of the models.
 The models are written using the LibRecommen- dation library. This is an open source recommender system library that provide TensorFlow, PyTorch, Cython implementations of major recommender algorithms in the industry.
 
