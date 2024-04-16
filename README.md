@@ -1,20 +1,49 @@
-Recommendation Systems (Collaborative Filtering)
+# Collaborative Filtering based Recommender System
+_Completed in partial fulfillment of Master of Science - Data Analytics degree from Queen Mary University of London._
 
-In this work , I've trained and tested two recommendation system algorithms : user- based and item-based CF models on two different datasets(MovieLens, Book) to explore the performance in recommending users relevant content.
-The entire dataset was first downloaded from Kaggle and loaded into a pandas dataframe, where only the subset of a dataset was selected for training and testing of the models.
-The models are written using the LibRecommen- dation library. This is an open source recommender system library that provide TensorFlow, PyTorch, Cython implementations of major recommender algorithms in the industry.
+This code is supplementary to the master’s thesis on recommender systems. Link to the full thesis: [Link](https://drive.google.com/file/d/1tnwfL5aqheLoPntLSuVgCsPFs_2DXus1/view?usp=share_link) 
 
-In Movies_EDA_Final.ipynb and Books_EDA.ipynb one can find the exploratory data analysis. 
-In both the files we can see WordClouds, histograms, top rated movies, most famous genres - each of them to help us visualize different aspects of the niche. 
-In movieLensCFModels > item_based_CF.py  -> Implementation of the Item-based model
-In movieLensCFModels > user_based_CF.py -> Implementation of the User-based model
-In bookRecommendations > item_based_CF.py -> Implementation of the Item-based model
-In bookRecommendations > user_based_CF.py -> Implementation of the User-based model
+In this work, two recommender system algorithms are implemented and analyzed on the MovieLens and Book datasets. The data was collected from the popular data science competition platform Kaggle. The dataset links are provided below :
 
-In the Movie Lens dataset, the user-based recommendation system performs reasonably well, with an Root Mean Squared Error(RMSE) of 2.967 and Mean Absolute Error(MAE) of 2.859. 
-However, the item-based approach significantly outperforms it, achieving a much lower RMSE (0.872) and MAE (0.657). 
-In the Books Recommendation System, the item-based recommendation system outperforms the user-based approach in terms of prediction accuracy. 
-The item-based model achieves a lower RMSE (3.824) and MAE (3.047) compared to the user-based model with an RMSE of 4.351 and MAE of 3.586.
+* [MovieLens Dataset](https://www.kaggle.com/datasets/grouplens/movielens-20m-dataset?datasetId=339&sortBy=voteCount&select=tag.csv)
 
-Across the datasets, we can see that the item- based model outperformed the user based model, supporting the reports from the existing literature.
-It was also seen that excluding implicit feedback data points improved performance in both the models in the book recommenda- tions dataset.
+* [Book Recommendation system](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset?select=Users.csv)
+
+Two algorithms are explored in this work - the User Based Collaborative Filtering model and the Item Based Collaborative Filtering model. This is a comparative study between the recommendations provided by each algorithm on the two datasets, the results of which can be found below. Root Mean Squared Error and Mean Absolute Error are the performance metrics used in this work to evaluate performance of the models.
+
+The algorithm implementation is provided by the open-source LibRecommendation library [Link](https://librecommender.readthedocs.io/en/latest/#:~:text=LibRecommender%20is%20an%20easy%2Dto,different%20kinds%20of%20recommendation%20models.) , which provides implementations of most common recommender systems available in the literature. Due to a lack of cloud based hardware accelerators (GPUs, TPUs) a subset of the data was used. The results indicate that performance of the models were not deeply affected by this choice.
+
+The code is written is Python, and the directory structure of this repository is as follows:
+* Exploratory Data Analysis notebooks :
+  - Books_EDA.ipynb
+  - Movies_EDA_FINAL.ipynb
+* BookRecommendationCFModels :
+  - item_based_CF.py
+  - user_based_CF.py
+  - utils:
+    - data_loader.py
+    - recommender.py
+  - kaggle_data :
+    - Ratings.csv
+    - Books.csv
+* movieLensCFModels :
+  - item_ based_CF.py
+  - user_based_CF.py
+  - data_kaggle:
+    - movie.csv
+    - ratings.csv
+  - utils:
+    - data_loader.py
+    - recommend.py
+* requirements.txt
+
+# Results : 
+
+DATASET | USED BASED MODEL | ITEM BASED MODEL
+| :--- | ---: | :---:
+BOOKS  | RMSE: 4.351 <br> MAE: 3.586 | RMSE: 3.824 <br> MAE: 3.047
+MOVIELENS  | RMSE: 2.967 <br> MAE: 2.859 | RMSE: 0.872 <br> MAE: 0.657
+
+
+
+
