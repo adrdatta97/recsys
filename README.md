@@ -14,7 +14,7 @@ Two algorithms are explored in this work - the User Based Collaborative Filterin
 The algorithm implementation is provided by the open-source LibRecommendation library [Link](https://librecommender.readthedocs.io/en/latest/#:~:text=LibRecommender%20is%20an%20easy%2Dto,different%20kinds%20of%20recommendation%20models.) , which provides implementations of most common recommender systems available in the literature. Due to a lack of cloud based hardware accelerators (GPUs, TPUs) a subset of the data was used. The results indicate that performance of the models were not deeply affected by this choice.
 
 The code is written is Python, and the directory structure of this repository is as follows:
-* Exploratory Data Analysis notebooks :
+* EDA_notebooks :
   - Books_EDA.ipynb
   - Movies_EDA_FINAL.ipynb
 * BookRecommendationCFModels :
